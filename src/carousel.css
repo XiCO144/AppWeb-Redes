@@ -1,9 +1,8 @@
- 
 .slide {
   width: 100%;
   position: absolute;
-  opacity: 0;
-  animation: slideShow 16s infinite;
+  left: 100%;
+  animation: carousel-animation 40s infinite ease-in-out;
 }
 
 .slide:nth-child(1) {
@@ -20,18 +19,9 @@
 
 @keyframes slideShow {
   0% {
-    opacity: 0;
-  }
-  25% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 1;
-  }
-  75% {
-    opacity: 0;
+    opacity:0%;
   }
   100% {
-    opacity: 0;
+    opacity: 100%;
   }
 }

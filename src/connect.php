@@ -2,7 +2,7 @@
     $servername = "localhost";
     $username = "root";
     $password = "";
-    $database = "frutaria_db";
+    $database = "db_frutaria";
 
     $conn = mysqli_connect($servername, $username, $password, $database);
 
