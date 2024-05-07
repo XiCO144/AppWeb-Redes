@@ -37,11 +37,11 @@
             <div class="flex m-4">
                 <div class="bg-green-400 hover:bg-green-600 text-white font-bold py-2 px-4 mr-4 rounded flex w-48">
                     <img src="../../imagens/plus.svg" alt="Plus">
-                    <button onclick="">Novo Produto</button>
+                    <button onclick="window.location.href='add-prod.php'" class="w-48">Novo Produto</button></a>
                 </div>
                 <div class="bg-green-400 hover:bg-green-600 text-white font-bold py-2 px-4 rounded flex w-48">
                     <img src="../../imagens/refresh-cw.svg" alt="Refresh">
-                    <button >Atualizar</button>
+                    <button id="reloadButton" class="w-48">Atualizar</button>
                 </div>
             </div>
         </div>
@@ -72,8 +72,15 @@
             </table>
         </div>
     </main>
-    <footer class="bg-green-500 absolute bottom-0 w-full text-center">
+    <footer class="bg-green-500 absolute bottom-0 w-full text-center text-white">
             Copyright 2024 - Francisco Zambujo
     </footer>
+
+    <script>
+        const reloadButton = document.getElementById('reloadButton');
+        reloadButton.addEventListener('click', function() {
+          window.location.reload();
+        });
+    </script>
 </body>
 </html>
