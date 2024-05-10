@@ -40,12 +40,34 @@
                     <input class="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2 focus:ring-offset-gray-100" type="number" name="quantidade" id="quantidade">
                     <label for="descricao">Descrição</label>
                     <input class="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2 focus:ring-offset-gray-100" type="text" name="descricao" id="descricao">
+                    
+                    <label for="produtores">Nome do Produtor</label>
+                    <select name="produtores" id="produtores">
+                        <?php 
+                            require "../connect.php";
+                            $sqls = "SELECT id, nome FROM produtores";
+                            $result = $conn->query($sqls);
+
+                            if ($result->num_rows > 0) {
+                                while ($row = $result->fetch_assoc()) {
+                                    $id = $row["id"];
+                                    $nome = $row["nome"];
+                                    $selected = "";
+                                    if (isset($_POST["produtores"]) && $_POST["produtores"] == $id) {
+                                        $selected = "selected";
+                                    }
+                                    echo "<option value='$id' $selected>$nome</option>";
+                                }
+                            } else {
+                                echo "Nenhum resultado encontrado.";
+                            }
+                        ?>
+                    </select>
                     <button type="submit" class="mt-10 bg-green-400 hover:bg-green-600 text-white font-bold py-2 px-4 flex justify-center w-48 cursor-pointer rounded-md text-center">Adicionar Produto</button>
                 </form>
                 </div>
             </div>
         </div>
-        
     </main> 
     <!-- <footer class="bg-green-500 absolute bottom-0 w-full text-center text-white">
             Copyright 2024 - Francisco Zambujo
@@ -58,8 +80,16 @@
         $precoProd = $_POST["preco"];
         $quantidadeProd = $_POST["quantidade"];
         $descricaoProd = $_POST["descricao"];
+        $nomeProdutor = $_POST["produtores"];
+
+        echo "<script>console.log('Nome do Produto:', '$nomeProd');</script>";
+        echo "<script>console.log('Preço:', '$precoProd');</script>";
+        echo "<script>console.log('Quantidade:', '$quantidadeProd');</script>";
+        echo "<script>console.log('Descrição:', '$descricaoProd');</script>";
+        echo "<script>console.log('ID do Produtor:', '$nomeProdutor');</script>";
+
         
-        $sqli= "INSERT INTO produtos (nome, preco, quantidade, descricao) VALUES (".$nomeProd.",'".$precoProd."','".$quantidadeProd."','".$descricaoProd."');";
+        $sqli= "INSERT INTO produtos (nome, preco, quantidade, descricao, nome_produtor) VALUES (".$nomeProd.",'".$precoProd."','".$quantidadeProd."','".$descricaoProd."', '".$nomeProdutor."');";
         
         if ($conn->query($sqli)===true)
         {
