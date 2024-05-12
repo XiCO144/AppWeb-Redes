@@ -30,7 +30,7 @@
         <hr class="border-black w-4/5 m-auto">
         <div class="flex justify-center mt-10 mb-10">
             <div class="w-80 rounded-2xl bg-white">
-                <div class="flex flex-col justify-center text-center gap-y-3 p-2 p-8">
+                <div class="flex flex-col justify-center text-center gap-y-3">
                 <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
                     <label for="nome">Nome do Produto</label>
                     <input class="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2 focus:ring-offset-gray-100" type="text" name="nome" id="nome">
@@ -63,7 +63,7 @@
                             }
                         ?>
                     </select>
-                    <button type="submit" class="mt-10 bg-green-400 hover:bg-green-600 text-white font-bold py-2 px-4 flex justify-center w-48 cursor-pointer rounded-md text-center">Adicionar Produto</button>
+                    <button type="submit" class="mt-4 bg-green-400 hover:bg-green-600 text-white font-bold py-2 px-4 w-48 cursor-pointer rounded-md text-center">Adicionar Produto</button>
                 </form>
                 </div>
             </div>
@@ -87,7 +87,6 @@
         echo "<script>console.log('Quantidade:', '$quantidadeProd');</script>";
         echo "<script>console.log('Descrição:', '$descricaoProd');</script>";
         echo "<script>console.log('ID do Produtor:', '$nomeProdutor');</script>";
-
         
         $sqli= "INSERT INTO produtos (nome, preco, quantidade, descricao, nome_produtor) VALUES (".$nomeProd.",'".$precoProd."','".$quantidadeProd."','".$descricaoProd."', '".$nomeProdutor."');";
         
