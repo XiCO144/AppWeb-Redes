@@ -20,9 +20,9 @@
             <a href="../produtores/produtores.php" class="px-2 hover:border hover:border-green-600 hover:rounded-md">Produtores</a>
             <img src="../../imagens/store.svg" alt="icon">
         </nav>
-        <div class="flex absolute z-10">
-            <img src="../../imagens/toldo.png" alt="Toldo" class="m-auto w-2/4">
-            <img src="../../imagens/toldo.png" alt="Toldo" class="m-auto w-2/4">
+        <div class="flex flex-row -space-x-2">
+            <img src="../../imagens/toldo.png" alt="Toldo" class="w-2/4">
+            <img src="../../imagens/toldo.png" alt="Toldo" class="w-2/4">
         </div>
     </header>
     <main>
@@ -69,24 +69,21 @@
             </div>
         </div>
     </main> 
-    <!-- <footer class="bg-green-500 absolute bottom-0 w-full text-center text-white">
-            Copyright 2024 - Francisco Zambujo
-    </footer> --> 
 <?php 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         require "../connect.php";
         
         $nomeProd = $_POST["nome"];
-        $precoProd = $_POST["preco"];
+        $precoProd = (double) $_POST["preco"];
         $quantidadeProd = $_POST["quantidade"];
         $descricaoProd = $_POST["descricao"];
-        $nomeProdutor = $_POST["produtores"];
+        $nomeProdutor = (int) $_POST["produtores"];
 
-        echo "<script>console.log('Nome do Produto:', '$nomeProd');</script>";
-        echo "<script>console.log('Preço:', '$precoProd');</script>";
-        echo "<script>console.log('Quantidade:', '$quantidadeProd');</script>";
-        echo "<script>console.log('Descrição:', '$descricaoProd');</script>";
-        echo "<script>console.log('ID do Produtor:', '$nomeProdutor');</script>";
+        echo "<script>console.log('Nome do Produto:', '$nomeProd');</script>
+        <script>console.log('Preço:', '$precoProd');</script>
+        <script>console.log('Quantidade:', '$quantidadeProd');</script>
+        <script>console.log('Descrição:', '$descricaoProd');</script>
+        <script>console.log('ID do Produtor:', '$nomeProdutor');</script>";
         
         $sqli= "INSERT INTO produtos (nome, preco, quantidade, descricao, nome_produtor) VALUES (".$nomeProd.",'".$precoProd."','".$quantidadeProd."','".$descricaoProd."', '".$nomeProdutor."');";
         
@@ -105,5 +102,8 @@
             echo "Erro a inserir Produto";
     }
 ?>
+    <footer class="bg-green-500 bottom-0 w-full text-center text-white">
+            Copyright 2024 - Francisco Zambujo
+    </footer> 
 </body>
 </html>

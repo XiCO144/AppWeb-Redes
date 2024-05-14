@@ -22,15 +22,16 @@
             <a href="login.php" class="px-2 hover:border hover:border-green-600 hover:rounded-md">Log-In</a>
             <img src="../imagens/store.svg" alt="icon">
         </nav>
-        <div class="flex absolute left-0 w-full z-10">
-            <img src="../imagens/toldo.png" alt="Toldo" class="m-auto w-2/4">
+        <div class="flex flex-row -space-x-2">
+            <img src="../imagens/toldo.png" alt="Toldo" class="w-2/4">
+            <img src="../imagens/toldo.png" alt="Toldo" class="w-2/4">
         </div>
     </header>
     <div class="flex justify-center mt-24 mb-10">
         <div class="w-80 rounded-2xl bg-white">
             <div class="flex flex-col justify-center text-center gap-y-3">
                 <div class="bg-green-500 rounded-md border-white border-2">
-                    <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+                    <form method="POST" <?php echo $_SERVER['PHP_SELF']; ?>">
                         <label for="user">Username:</label>
                         <input placeholder="Username" class="w-48 rounded-lg border border-gray-300 bg-green-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2 focus:ring-offset-gray-100" type="text" id="user" name="user" required><br><br>
                         <label for="pass">Password:</label>
@@ -58,7 +59,9 @@
                 $result = $conn->query($sql);
             
                 if ($result->num_rows > 0) {
-                    echo '<div class="success">Hello World!</div>';
+                    session_start();
+                    $_SESSION['user'] = $user;
+                    echo '<div class="relative"></div>';
                     exit();
                 }else{
                     echo '<div class="success">FAil!</div>';
@@ -67,6 +70,9 @@
             }
         }
     ?>
+    <footer class="bg-green-500 bottom-0 w-full text-center text-white">
+            Copyright 2024 - Francisco Zambujo
+    </footer>
 
     <script src="sweetalert2.all.min.js"></script>
     <script>
@@ -76,7 +82,7 @@
             type: 'success',
             title: "Good job!",
             text: "You clicked the button!",
-            icon: "success"
+            icon: "success",
             confirmButtonText: "ok",
             });
         })

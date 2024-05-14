@@ -24,11 +24,13 @@
             <a href="../produtos/produtos.php" class="px-2 hover:border hover:border-green-600 hover:rounded-md">Produtos</a>
             •
             <a href="../produtores/produtores.php" class="px-2 hover:border hover:border-green-600 hover:rounded-md">Produtores</a>
+            •
+            <a href="login.php" class="px-2 hover:border hover:border-green-600 hover:rounded-md">Log-In</a>
             <img src="../../imagens/store.svg" alt="icon">
         </nav>
-        <div class="flex absolute z-10">
-            <img src="../../imagens/toldo.png" alt="Toldo" class="m-auto w-2/4">
-            <img src="../../imagens/toldo.png" alt="Toldo" class="m-auto w-2/4">
+        <div class="flex flex-row -space-x-2">
+            <img src="../../imagens/toldo.png" alt="Toldo" class="w-2/4">
+            <img src="../../imagens/toldo.png" alt="Toldo" class="w-2/4">
         </div>
     </header>
     <main>
@@ -47,14 +49,16 @@
         </div>
         <hr>
         <div>
-            <table class="border-black border-collapse border-solid border-2 text-center">
-                <thead class="text-white font-bold bg-slate-500">
+            <table class="bg-white border-collapse table-auto text-left rtl:text-right text-black">
+                <thead class="text-black font-bold text-center">
                     <tr>
-                        <td class="p-2 border-solid border-2">Id</td>
-                        <td class="p-2 border-solid border-2">Produto</td>
-                        <td class="p-2 border-solid border-2">Preço</td>
-                        <td class="p-2 border-solid border-2">Quantidade</td>
-                        <td class="p-2 border-solid border-2">Descrição</td>
+                        <td class="p-2 border border-slate-700">Id</td>
+                        <td class="p-2 border border-slate-700">Produto</td>
+                        <td class="p-2 border border-slate-700">Preço</td>
+                        <td class="p-2 border border-slate-700">Quantidade</td>
+                        <td class="p-2 border border-slate-700">Descrição</td>
+                        <td class="p-2 border border-slate-700">Opções</td>
+
                     </tr>
                 </thead>
                 <tbody>
@@ -62,9 +66,20 @@
                         if ($resultado->num_rows > 0){
                         while ($registo = $resultado->fetch_assoc())
                             {
-                            echo "<tr>";
-                            echo "<td>".$registo["id"]."</td> <td>".$registo["nome"]."</td> <td>".$registo["preco"]."</td> <td>".$registo["quantidade"]."</td> <td>".$registo["descricao"]."</td>";
-                            echo "</tr>";
+                            echo "<tr>
+                            <td class='p-2 border border-slate-700'>".$registo['id']." </td> 
+                            <td class='p-2 border border-slate-700'>".$registo['nome']."</td> 
+                            <td class='p-2 border border-slate-700'>".$registo['preco']."</td>
+                            <td class='p-2 border border-slate-700'>".$registo['quantidade']."</td> 
+                            <td class='p-2 border border-slate-700'>".$registo['descricao']."</td>
+                            <td class='p-2 border border-slate-700'>
+                            <div class='flex flex-row gap-2'>
+                                    <button id='btn_visualizar' class='p-2 bg-green-800 text-white font-bold flex rounded'><img class='size-4' src='../../imagens/eye.svg'>Visualizar</button>
+                                    <button id='btn_editar' class='p-2 bg-yellow-500 text-black font-bold flex rounded'><img src='../../imagens/pencil.svg'>Editar</button>
+                                    <button id='btn_eliminar' class='p-2 bg-red-500 text-black font-bold flex rounded'><img src='../../imagens/trash-2.svg'>Eliminar</button></td>
+                            </div>
+                            </td>
+                            </tr>";
                             }
                         }   
                     ?>
@@ -72,7 +87,7 @@
             </table>
         </div>
     </main>
-    <footer class="bg-green-500 absolute bottom-0 w-full text-center text-white">
+    <footer class="bg-green-500 bottom-0 w-full text-center text-white">
             Copyright 2024 - Francisco Zambujo
     </footer>
 

@@ -22,8 +22,9 @@
             <a href="login.php" class="px-2 hover:border hover:border-green-600 hover:rounded-md">Log-In</a>
             <img src="../imagens/store.svg" alt="icon">
         </nav>
-        <div class="flex absolute left-0 w-full z-10">
-            <img src="../imagens/toldo.png" alt="Toldo" class="m-auto w-2/4">
+        <div class="flex flex-row -space-x-2">
+            <img src="../imagens/toldo.png" alt="Toldo" class="w-2/4">
+            <img src="../imagens/toldo.png" alt="Toldo" class="w-2/4">
         </div>
     </header>
     <div class="flex justify-center mt-24 mb-10">
@@ -31,9 +32,9 @@
             <div class="flex flex-col justify-center text-center gap-y-3">
                 <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>" class="bg-green-500 rounded-md border-white border-2">
                     <label for="user">Insira o seu username:</label>
-                    <input placeholder="Novo Username" class="w-24 rounded-lg border border-gray-300 bg-green-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2 focus:ring-offset-gray-100" type="text" id="user" name="user" required><br><br>
+                    <input placeholder="Novo Username" class="w-48 rounded-lg border border-gray-300 bg-green-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2 focus:ring-offset-gray-100" type="text" id="user" name="user" required><br><br>
                     <label for="pass">Insira a sua password:</label>
-                    <input placeholder="Nova Password" class="w-24 rounded-lg border border-gray-300 bg-green-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2 focus:ring-offset-gray-100" type="password" id="pass" name="pass" required><br><br>
+                    <input placeholder="Nova Password" class="w-48 rounded-lg border border-gray-300 bg-green-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2 focus:ring-offset-gray-100" type="password" id="pass" name="pass" required><br><br>
                     <button type="submit" class="mt-4 bg-green-400 hover:bg-green-600 text-white font-bold py-2 px-4 w-48 cursor-pointer rounded-md text-center">Criar Utilizador</button>
                 </form>
             </div>
@@ -63,5 +64,8 @@
         $conn->close();
         }
     ?>
+    <footer class="bg-green-500 bottom-0 w-full text-center text-white">
+        Copyright 2024 - Francisco Zambujo
+    </footer>
 </body>
 </html>
