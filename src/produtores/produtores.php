@@ -39,7 +39,7 @@
             <div class="flex m-4">
                 <div class="bg-green-400 hover:bg-green-600 text-white font-bold py-2 px-4 mr-4 rounded flex w-48">
                     <img src="../../imagens/plus.svg" alt="Plus">
-                    <button onclick="window.location.href='add-prod.php'" class="w-48">Novo Produto</button></a>
+                    <button onclick="window.location.href='add-produtor.php'" class="w-48">Novo Produtor</button></a>
                 </div>
                 <div class="bg-green-400 hover:bg-green-600 text-white font-bold py-2 px-4 rounded flex w-48">
                     <img src="../../imagens/refresh-cw.svg" alt="Refresh">
@@ -74,9 +74,9 @@
                                 <td class='p-2 border border-slate-700'>".$registo['email']."</td> 
                                 <td class='p-2 border border-slate-700'>
                                 <div class='flex flex-row gap-2'>
-                                    <button id='btn_visualizar' class='p-2 bg-green-800 text-white font-bold flex rounded'><img class='size-4' src='../../imagens/eye.svg'>Visualizar</button>
-                                    <button id='btn_editar' class='p-2 bg-yellow-500 text-black font-bold flex rounded'><img src='../../imagens/pencil.svg'>Editar</button>
-                                    <button id='btn_eliminar' class='p-2 bg-red-500 text-black font-bold flex rounded'><img src='../../imagens/trash-2.svg'>Eliminar</button></td>
+                                    <button id='btn_visualizar' class='p-2 bg-green-800 hover:bg-green-900 text-white font-bold flex rounded'><img class='size-4' src='../../imagens/eye.svg'>Visualizar</button>
+                                    <button id='btn_editar' class='p-2 bg-yellow-500 hover:bg-yellow-600 text-black font-bold flex rounded'><img src='../../imagens/pencil.svg'>Editar</button>
+                                    <button id='btn_eliminar' class='p-2 bg-red-500 hover:bg-red-600 text-black font-bold flex rounded'><img src='../../imagens/trash-2.svg'>Eliminar</button></td>
                                 </div>
                                 </tr>";
                             }

@@ -63,7 +63,7 @@
                             }
                         ?>
                     </select>
-                    <button type="submit" class="mt-4 bg-green-400 hover:bg-green-600 text-white font-bold py-2 px-4 w-48 cursor-pointer rounded-md text-center">Adicionar Produto</button>
+                    <button type="submit" class="btn-submit">Adicionar Produto</button>
                 </form>
                 </div>
             </div>
