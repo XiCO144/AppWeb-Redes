@@ -7,26 +7,10 @@
     <link rel="icon" type="image/x-icon" href="../imagens/fruits.png">
 </head>
 <body class="bg-green-300">
-    <header class="bg-green-500 text-white h-48">
-        <img src="../imagens/frescos.png" alt="Logo" class="w-28 m-auto">
-        <nav class="flex justify-center m-4">
-            <img src="../imagens/store.svg" alt="icon">
-            <a href="index.html" class="px-2 hover:border hover:border-green-600 hover:rounded-md">Início</a>
-            •
-            <a href="contactos.html" class="px-2 hover:border hover:border-green-600 hover:rounded-md">Contactos</a>
-            •
-            <a href="produtos/produtos.php" class="px-2 hover:border hover:border-green-600 hover:rounded-md">Produtos</a>
-            •
-            <a href="produtores/produtores.php" class="px-2 hover:border hover:border-green-600 hover:rounded-md">Produtores</a>
-            •
-            <a href="login.php" class="px-2 hover:border hover:border-green-600 hover:rounded-md">Log-In</a>
-            <img src="../imagens/store.svg" alt="icon">
-        </nav>
-        <div class="flex flex-row -space-x-2">
-            <img src="../imagens/toldo.png" alt="Toldo" class="w-2/4">
-            <img src="../imagens/toldo.png" alt="Toldo" class="w-2/4">
-        </div>
-    </header>
+    <?php 
+        require "./header.php";
+        session_destroy();
+    ?>
     <div class="flex justify-center mt-24 mb-10">
         <div class="w-80 rounded-2xl bg-white">
             <div class="flex flex-col justify-center text-center gap-y-3">
@@ -61,10 +45,10 @@
                 if ($result->num_rows > 0) {
                     session_start();
                     $_SESSION['user'] = $user;
-                    echo '<div class="relative"></div>';
+                    header('Location: index.php');
                     exit();
                 }else{
-                    echo '<div class="success">FAil!</div>';
+                    echo '<div class="success">FAiL!</div>';
                     exit();
                 }
             }

@@ -4,45 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frescos Lda | Produtores.</title>
-    <link href="../output.css" rel="stylesheet">    
+    <link href="./output.css" rel="stylesheet">    
     <link rel="icon" type="image/x-icon" href="../../imagens/fruits.png">
 </head>
 <body class="bg-green-300">
     <?php
-        require "../connect.php";
+        require "./header.php";
+        require "./connect.php";
         $sqle = "SELECT * FROM produtores;";
         $resultado = $conn->query($sqle);
     ?>
-    <header class="bg-green-500 text-white h-48">
-        <img src="../../imagens/frescos.png" alt="Logo" class="w-28 m-auto">
-        <nav class="flex justify-center m-4">
-            <img src="../../imagens/store.svg" alt="icon">
-            <a href="../index.html" class="px-2 hover:border hover:border-green-600 hover:rounded-md">Início</a>
-            •
-            <a href="../contactos.html" class="px-2 hover:border hover:border-green-600 hover:rounded-md">Contactos</a>
-            •
-            <a href="../produtos/produtos.php" class="px-2 hover:border hover:border-green-600 hover:rounded-md">Produtos</a>
-            •
-            <a href="../produtores/produtores.php" class="px-2 hover:border hover:border-green-600 hover:rounded-md">Produtores</a>
-            •
-            <a href="../login.php" class="px-2 hover:border hover:border-green-600 hover:rounded-md">Log-In</a>
-            <img src="../../imagens/store.svg" alt="icon">
-        </nav>
-        <div class="flex flex-row -space-x-2">
-            <img src="../../imagens/toldo.png" alt="Toldo" class="w-2/4">
-            <img src="../../imagens/toldo.png" alt="Toldo" class="w-2/4">
-        </div>
-    </header>
     <main>
         <div>
             <h1 class="font-bold text-4xl mt-24">Produtores</h1>
             <div class="flex m-4">
                 <div class="bg-green-400 hover:bg-green-600 text-white font-bold py-2 px-4 mr-4 rounded flex w-48">
-                    <img src="../../imagens/plus.svg" alt="Plus">
+                    <img src="../imagens/plus.svg" alt="Plus">
                     <button onclick="window.location.href='add-produtor.php'" class="w-48">Novo Produtor</button></a>
                 </div>
                 <div class="bg-green-400 hover:bg-green-600 text-white font-bold py-2 px-4 rounded flex w-48">
-                    <img src="../../imagens/refresh-cw.svg" alt="Refresh">
+                    <img src="../imagens/refresh-cw.svg" alt="Refresh">
                     <button id="reloadButton" class="w-48">Atualizar</button>
                 </div>
             </div>
@@ -74,9 +55,9 @@
                                 <td class='p-2 border border-slate-700'>".$registo['email']."</td> 
                                 <td class='p-2 border border-slate-700'>
                                 <div class='flex flex-row gap-2'>
-                                    <button id='btn_visualizar' class='p-2 bg-green-800 hover:bg-green-900 text-white font-bold flex rounded'><img class='size-4' src='../../imagens/eye.svg'>Visualizar</button>
-                                    <button id='btn_editar' class='p-2 bg-yellow-500 hover:bg-yellow-600 text-black font-bold flex rounded'><img src='../../imagens/pencil.svg'>Editar</button>
-                                    <button id='btn_eliminar' class='p-2 bg-red-500 hover:bg-red-600 text-black font-bold flex rounded'><img src='../../imagens/trash-2.svg'>Eliminar</button></td>
+                                    <button id='btn_visualizar' class='p-2 bg-green-800 hover:bg-green-900 text-white font-bold flex rounded'><img class='size-4' src='../imagens/eye.svg'>Visualizar</button>
+                                    <button id='btn_editar' class='p-2 bg-yellow-500 hover:bg-yellow-600 text-black font-bold flex rounded'><img src='../imagens/pencil.svg'>Editar</button>
+                                    <a href='./delete-produtor.php'><button id='btn_eliminar' class='p-2 bg-red-500 hover:bg-red-600 text-black font-bold flex rounded'><img src='../imagens/trash-2.svg'>Eliminar</button></td></a>
                                 </div>
                                 </tr>";
                             }

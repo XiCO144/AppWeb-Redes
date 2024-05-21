@@ -2,30 +2,15 @@
 <html lang="en">
 <head>
     <title>Frescos Lda. | Adicionar Produto</title>
-    <link href="../output.css" rel="stylesheet">
-    <link href="../number.css" rel="stylesheet">
+    <link href="./output.css" rel="stylesheet">
+    <link href="./number.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="../../imagens/fruits.png">
 </head>
 <body class="bg-green-300">
-    <header class="bg-green-500 text-white h-48">
-        <img src="../../imagens/frescos.png" alt="Logo" class="w-28 m-auto">
-        <nav class="flex justify-center m-4">
-            <img src="../../imagens/store.svg" alt="icon">
-            <a href="../index.html" class="px-2 hover:border hover:border-green-600 hover:rounded-md">Início</a>
-            •
-            <a href="../contactos.html" class="px-2 hover:border hover:border-green-600 hover:rounded-md">Contactos</a>
-            •
-            <a href="../produtos/produtos.php" class="px-2 hover:border hover:border-green-600 hover:rounded-md">Produtos</a>
-            •
-            <a href="../produtores/produtores.php" class="px-2 hover:border hover:border-green-600 hover:rounded-md">Produtores</a>
-            <img src="../../imagens/store.svg" alt="icon">
-        </nav>
-        <div class="flex flex-row -space-x-2">
-            <img src="../../imagens/toldo.png" alt="Toldo" class="w-2/4">
-            <img src="../../imagens/toldo.png" alt="Toldo" class="w-2/4">
-        </div>
-    </header>
-    <main>
+    <?php 
+        require "./header.php";
+    ?>
+    <main class="text-black">
         <h1 class="m-10 font-bold text-4xl flex justify-center">Novo Produto</h1>
         <hr class="border-black w-4/5 m-auto">
         <div class="flex justify-center mt-10 mb-10">
@@ -71,7 +56,7 @@
     </main> 
 <?php 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        require "../connect.php";
+        require "./connect.php";
         
         $nomeProd = $_POST["nome"];
         $precoProd = (double) $_POST["preco"];
@@ -85,7 +70,7 @@
         <script>console.log('Descrição:', '$descricaoProd');</script>
         <script>console.log('ID do Produtor:', '$nomeProdutor');</script>";
         
-        $sqli= "INSERT INTO produtos (nome, preco, quantidade, descricao, nome_produtor) VALUES (".$nomeProd.",'".$precoProd."','".$quantidadeProd."','".$descricaoProd."', '".$nomeProdutor."');";
+        $sqli= "INSERT INTO produtos (nome, preco, quantidade, descricao, nome_produtor) VALUES ('".$nomeProd."','".$precoProd."','".$quantidadeProd."','".$descricaoProd."', '".$nomeProdutor."');";
         
         if ($conn->query($sqli)===true)
         {

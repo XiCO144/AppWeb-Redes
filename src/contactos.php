@@ -8,32 +8,15 @@
     <link rel="icon" type="image/x-icon" href="../imagens/fruits.png">
 </head>
 <body class="bg-green-300">
-    <header class="bg-green-500 text-white h-48">
-        <img src="../imagens/frescos.png" alt="Logo" class="w-28 m-auto">
-        <nav class="flex justify-center m-4">
-            <img src="../imagens/store.svg" alt="icon">
-            <a href="index.html" class="px-2 hover:border hover:border-green-600 hover:rounded-md">Início</a>
-            •
-            <a href="contactos.html" class="px-2 hover:border hover:border-green-600 hover:rounded-md">Contactos</a>
-            •
-            <a href="produtos/produtos.php" class="px-2 hover:border hover:border-green-600 hover:rounded-md">Produtos</a>
-            •
-            <a href="produtores/produtores.php" class="px-2 hover:border hover:border-green-600 hover:rounded-md">Produtores</a>
-            •
-            <a href="login.php" class="px-2 hover:border hover:border-green-600 hover:rounded-md">Log-In</a>
-            <img src="../imagens/store.svg" alt="icon">
-        </nav>
-        <div class="flex flex-row -space-x-2">
-            <img src="../imagens/toldo.png" alt="Toldo" class="w-2/4">
-            <img src="../imagens/toldo.png" alt="Toldo" class="w-2/4">
-        </div>
-    </header>
-    <main class="flex items-center justify-center">
+    <?php 
+        require "./header.php";
+    ?>
+    <main class="flex items-center justify-center m-10">
         <div class="border-white rounded-md border-solid">
             <div class="border-white rounded-md bg-white w-[580px] h-[300px] p-4 text-justify mx-20 my-10">
             <h2 class="font-bold text-4xl text-green-600 text-left">Bem-Vindo à Frescos Lda.</h2>
-            <p class="font-bold text-xl pb-4">Frescos: O seu portal de frescura</p>
-            <p>Na Frescos, acreditamos que a alimentação saudável e saborosa deve ser acessível a todos. É por isso que oferecemos uma vasta gama de frutas e legumes frescos da época, a preços competitivos.
+            <p class="font-bold text-xl pb-4 text-black">Frescos: O seu portal de frescura</p>
+            <p class="text-black">Na Frescos, acreditamos que a alimentação saudável e saborosa deve ser acessível a todos. É por isso que oferecemos uma vasta gama de frutas e legumes frescos da época, a preços competitivos.
                 Somos apaixonados por produtos de qualidade e trabalhamos diretamente com agricultores locais para garantir que os nossos clientes recebam os produtos mais frescos e saborosos possível.
                 Para além da nossa loja física, também oferecemos um serviço de entrega ao domicílio rápido e eficiente.
                 Visite-nos ou contacte-nos para saber mais sobre os nossos produtos e serviços.</p>
