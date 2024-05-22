@@ -55,8 +55,7 @@
                                 <td class='p-2 border border-slate-700'>".$registo['email']."</td> 
                                 <td class='p-2 border border-slate-700'>
                                 <div class='flex flex-row gap-2'>
-                                    <button id='btn_visualizar' class='p-2 bg-green-800 hover:bg-green-900 text-white font-bold flex rounded'><img class='size-4' src='../imagens/eye.svg'>Visualizar</button>
-                                    <button id='btn_editar' class='p-2 bg-yellow-500 hover:bg-yellow-600 text-black font-bold flex rounded'><img src='../imagens/pencil.svg'>Editar</button>
+                                    <a href='./edit-produtor.php'><button id='btn_editar' class='p-2 bg-yellow-500 hover:bg-yellow-600 text-black font-bold flex rounded'><img src='../imagens/pencil.svg'>Editar</button></a>
                                     <a href='./delete-produtor.php'><button id='btn_eliminar' class='p-2 bg-red-500 hover:bg-red-600 text-black font-bold flex rounded'><img src='../imagens/trash-2.svg'>Eliminar</button></td></a>
                                 </div>
                                 </tr>";

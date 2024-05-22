@@ -47,7 +47,7 @@
         ?>
         <img src="../imagens/store.svg" alt="icon">
     </nav>
-    <div class="flex flex-row absolute z-10 -space-x-2">
+    <div class="flex flex-row z-10 -space-x-12">
         <img src="../imagens/toldo.png" alt="Toldo" class="w-2/4">
         <img src="../imagens/toldo.png" alt="Toldo" class="w-2/4">
     </div>

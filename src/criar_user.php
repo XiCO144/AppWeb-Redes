@@ -30,7 +30,7 @@
     <div class="flex justify-center mt-24 mb-10">
         <div class="w-80 rounded-2xl bg-white">
             <div class="flex flex-col justify-center text-center gap-y-3">
-                <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>" class="bg-green-500 rounded-md border-white border-2">
+                <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>" class="p-2 bg-green-500 rounded-md border-white border-2">
                     <label for="user">Insira o seu username:</label>
                     <input placeholder="Novo Username" class="w-48 rounded-lg border border-gray-300 bg-green-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2 focus:ring-offset-gray-100" type="text" id="user" name="user" required><br><br>
                     <label for="pass">Insira a sua password:</label>
@@ -51,12 +51,29 @@
         $result_check = $conn->query($sql_check);
 
         if ($result_check->num_rows > 0) {  
-            echo "Utilizador e password já existem!";
+            echo "
+            <div class='mx-auto max-w-lg rounded-lg border border-stone bg-stone-100 p-4 shadow-lg sm:p-6 lg:p-8'>
+                <div class='flex items-center gap-4'>
+                    <span class='p-2 text-white'><p class='font-medium sm:text-lg text-emerald-600'>Frescos Lda.</p>
+                    <p class='mt-4 text-gray-600'>Utilizador já existe!</p>
+                    <div class='mt-6 sm:flex sm:gap-4'>
+                    </div>
+                </div>
+            </div>";
         } else {
             $sql_insert = "INSERT INTO utilizadores (user, pass) VALUES ('$user', '$pass')";
 
             if ($conn->query($sql_insert) === TRUE) {
-            echo "Utilizador criado com sucesso!";
+                echo "
+                <div class='mx-auto max-w-lg rounded-lg border border-stone bg-stone-100 p-4 shadow-lg sm:p-6 lg:p-8'>
+                    <div class='flex items-center gap-4'>
+                        <span class='p-2 text-white'><p class='font-medium sm:text-lg text-emerald-600'>Frescos Lda.</p>
+                        <p class='mt-4 text-gray-600'>Utilizador criado com sucesso!</p>
+                        <div class='mt-6 sm:flex sm:gap-4'>
+                        <a href='./index.php' class='inline-block w-full rounded-lg bg-emerald-500 px-5 py-3 text-center text-sm font-semibold text-white sm:w-auto'>OK</a>
+                        </div>
+                    </div>
+                </div>";
             } else {
             echo "Erro ao criar utilizador: " . $conn->error;
             }
