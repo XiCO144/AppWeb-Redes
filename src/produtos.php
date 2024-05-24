@@ -55,8 +55,8 @@
                             <td class='p-2 border border-slate-700'>".$registo['descricao']."</td>
                             <td class='p-2 border border-slate-700'>
                             <div class='flex flex-row gap-2'>
-                                    <a href='edit-prod.php'><button id='btn_editar' class='p-2 bg-yellow-500 hover:bg-yellow-600 text-black font-bold flex rounded'><img src='../imagens/pencil.svg'>Editar</button></a>
-                                    <a href='delete-prod.php'><button id='btn_eliminar' class='p-2 bg-red-500 hover:bg-red-600 text-black font-bold flex rounded'><img src='../imagens/trash-2.svg'>Eliminar</button></a>
+                                    <a href='edit-prod.php?id=".$registo['id']."' class='p-2 bg-yellow-500 hover:bg-yellow-600 text-black font-bold flex rounded'><img src='../imagens/pencil.svg'>Editar</a>
+                                    <a href='delete-prod.php?id=".$registo['id']."' class='p-2 bg-red-500 hover:bg-red-600 text-black font-bold flex rounded'><img src='../imagens/trash-2.svg'>Eliminar</a>
                                     </td>
                             </div>
                             </td>
