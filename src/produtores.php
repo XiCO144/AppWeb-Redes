@@ -15,20 +15,20 @@
         $resultado = $conn->query($sqle);
     ?>
     <main>
-        <div>
-            <h1 class="font-bold text-4xl mt-24">Produtores</h1>
+    <div>
+        <h1 class="m-10 font-bold text-4xl flex justify-center">Produtores</h1>
+            <hr class="border-black w-4/5 m-auto">
             <div class="flex m-4">
                 <div class="bg-green-400 hover:bg-green-600 text-white font-bold py-2 px-4 mr-4 rounded flex w-48">
                     <img src="../imagens/plus.svg" alt="Plus">
-                    <button onclick="window.location.href='add-produtor.php'" class="w-48">Novo Produtor</button></a>
+                    <button onclick="window.location.href='add-produtor.php'" class="w-48">Novo Produtor</button>
                 </div>
                 <div class="bg-green-400 hover:bg-green-600 text-white font-bold py-2 px-4 rounded flex w-48">
                     <img src="../imagens/refresh-cw.svg" alt="Refresh">
                     <button id="reloadButton" class="w-48">Atualizar</button>
                 </div>
             </div>
-        </div>
-        <hr>
+
         <div>
             <table class="bg-white border-collapse table-auto text-left rtl:text-right text-black">
                 <thead class="text-black font-bold text-center">
@@ -55,8 +55,8 @@
                                 <td class='p-2 border border-slate-700'>".$registo['email']."</td> 
                                 <td class='p-2 border border-slate-700'>
                                 <div class='flex flex-row gap-2'>
-                                    <a href='./edit-produtor.php'><button id='btn_editar' class='p-2 bg-yellow-500 hover:bg-yellow-600 text-black font-bold flex rounded'><img src='../imagens/pencil.svg'>Editar</button></a>
-                                    <a href='./delete-produtor.php'><button id='btn_eliminar' class='p-2 bg-red-500 hover:bg-red-600 text-black font-bold flex rounded'><img src='../imagens/trash-2.svg'>Eliminar</button></td></a>
+                                <a href='edit-produtor.php?id=".$registo['id']."' class='btn-editar'><img src='../imagens/pencil.svg'>Editar</a>
+                                <a href='delete-produtor.php?id=".$registo['id']."' class='btn-eliminar'><img src='../imagens/trash-2.svg'>Eliminar</a>
                                 </div>
                                 </tr>";
                             }
@@ -64,6 +64,7 @@
                     ?>
                 </tbody>
             </table>
+        </div>
         </div>
     </main>
     <footer class="bg-green-500 bottom-0 w-full text-center text-white">

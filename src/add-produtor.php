@@ -11,30 +11,27 @@
         require "./header.php";
     ?>
     <main class="text-black">
-        <h1 class="m-10 font-bold text-4xl flex justify-center">Novo Produtor</h1>
+    <h1 class="m-10 font-bold text-4xl flex justify-center">Novo Produtor</h1>
         <hr class="border-black w-4/5 m-auto">
         <div class="flex justify-center mt-10 mb-10">
-            <div class="w-80 rounded-2xl bg-white">
-                <div class="flex flex-col justify-center text-center gap-y-3">
-                <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-                    <label for="nome">Nome do Produtor</label>
-                    <input class="input" type="text" name="nome" id="nome">
-                    <label for="endereco">Endereço</label>
-                    <input class="input" type="text" name="endereco" id="endereco">
-                    <label for="contacto">Contacto</label>
-                    <input class="input" type="text" name="contacto" id="contacto">
-                    <label for="email">email</label>
-                    <input class="input" type="email" name="email" id="email">
+            <div class="w-96 rounded-2xl bg-white">
+                <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>" class="grid items-center justify-center grid-rows-2 gap-2">
+                        <label for="nome">Nome do Produtor</label>
+                        <input class="input" type="text" name="nome" id="nome">
+                        <label for="endereco">Endereço</label>
+                        <input class="input" type="text" name="endereco" id="endereco">
+                        <label for="contacto">Contacto</label>
+                        <input class="input" type="text" name="contacto" id="contacto">
+                        <label for="email">Email</label>
+                        <input class="input" type="email" name="email" id="email">
                     <button type="submit" class="btn-submit">Adicionar Produtor</button>
                 </form>
-                </div>
             </div>
         </div>
     </main> 
 <?php 
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        require "./connect.php";
-        
+    require "./connect.php";
+    if ($_SERVER['REQUEST_METHOD'] === "POST") {
         $nomeProdutor = $_POST["nome"];
         $enderecoProdutor = $_POST["endereco"];
         $contactoProdutor = $_POST["contacto"];

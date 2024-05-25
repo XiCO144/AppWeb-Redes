@@ -30,7 +30,7 @@
     <div class="flex justify-center mt-24 mb-10">
         <div class="w-80 rounded-2xl bg-white">
             <div class="flex flex-col justify-center text-center gap-y-3">
-                <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>" class="p-2 bg-green-500 rounded-md border-white border-2">
+                <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>" class="text-white p-2 bg-green-500 rounded-md border-white border-2">
                     <label for="user">Insira o seu username:</label>
                     <input placeholder="Novo Username" class="w-48 rounded-lg border border-gray-300 bg-green-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2 focus:ring-offset-gray-100" type="text" id="user" name="user" required><br><br>
                     <label for="pass">Insira a sua password:</label>
@@ -42,7 +42,6 @@
     </div>
     <?php
         require "./connect.php";
-
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $user = $conn->real_escape_string($_POST['user']);
         $pass = $conn->real_escape_string($_POST['pass']);

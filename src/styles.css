@@ -8,3 +8,9 @@
   .btn-submit{
     @apply mt-4 bg-green-400 hover:bg-green-600 text-white font-bold py-2 px-4 w-48 cursor-pointer rounded-md text-center;
   }
+  .btn-editar{
+    @apply p-2 bg-yellow-500 hover:bg-yellow-600 text-black font-bold flex rounded;
+  }
+  .btn-eliminar{
+    @apply p-2 bg-red-500 hover:bg-red-600 text-black font-bold flex rounded;
+  }

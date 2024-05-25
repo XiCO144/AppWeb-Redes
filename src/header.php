@@ -21,32 +21,30 @@
         <a href="produtos.php" class="px-2 hover:border hover:border-green-600 hover:rounded-md">Produtos</a>
         •
         <a href="produtores.php" class="px-2 hover:border hover:border-green-600 hover:rounded-md">Produtores</a>
-        •
-        <?php
-        if ($display_logout_button) {
-            echo '
-                <form method="post" action="">
-                    <button type="submit" name="logout" class="px-2 hover:border hover:border-green-600 hover:rounded-md">
-                        Log Out
-                    </button>
-                </form>
-            ';
-        } else {
-            echo '
-                <a href="login.php" class="px-2 hover:border hover:border-green-600 hover:rounded-md">
-                    Log In
-                </a>
-            ';
-        }
-        if ($display_logout_button) {
-            echo '
-            •
-            Username:';
-            echo $_SESSION['user'];
-        }
-        ?>
         <img src="../imagens/store.svg" alt="icon">
-    </nav>
+        <div class="absolute left-auto right-6 m-2">
+            <?php
+            if ($display_logout_button) {
+                echo "
+                    <form method='post'>
+                        <button type='submit' name='logout' class='px-2 hover:border hover:border-green-600 hover:rounded-md'>
+                            Log Out
+                        </button>
+                    </form>
+                ";
+            } else {
+                echo "
+                    <a href='login.php' class='px-2 hover:border hover:border-green-600 hover:rounded-md'>
+                        Log In
+                    </a>
+                    ";
+            }
+            if ($display_logout_button) {
+                echo "<p class ='absolute'>Username:".$_SESSION['user']."</p>";
+            }
+            ?>
+        </div>
+        </nav>
     <div class="flex flex-row z-10 -space-x-12">
         <img src="../imagens/toldo.png" alt="Toldo" class="w-2/4">
         <img src="../imagens/toldo.png" alt="Toldo" class="w-2/4">
