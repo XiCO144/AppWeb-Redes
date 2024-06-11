@@ -11,7 +11,7 @@
     <?php 
         require "./header.php";
         require "./connect.php";
-        $sqle = "SELECT produtos.id, produtos.nome, produtos.preco, produtos.quantidade, produtos.descricao, produtores.nome FROM produtos inner join produtores on produtos.nome_produtor = produtores.id;";
+        $sqle = "SELECT produtos.id, produtos.nome as Produto, produtos.preco, produtos.quantidade, produtos.descricao, produtores.nome FROM produtos inner join produtores on produtos.nome_produtor = produtores.id;";
         $resultado = $conn->query($sqle);
     ?>
     <main>
@@ -49,7 +49,7 @@
                             {
                             echo "<tr>
                             <td class='p-2 border border-slate-700'>".$registo['id']." </td> 
-                            <td class='p-2 border border-slate-700'>".$registo['nome']."</td> 
+                            <td class='p-2 border border-slate-700'>".$registo['Produto']."</td> 
                             <td class='p-2 border border-slate-700'>".$registo['preco']."€</td>
                             <td class='p-2 border border-slate-700'>".$registo['quantidade']."Kg</td> 
                             <td class='p-2 border border-slate-700'>".$registo['descricao']."</td>
